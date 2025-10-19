@@ -1,0 +1,106 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(135deg, #bcbcbc, #a6a6a6, #8f8f8f);
+  color: #fff;
+}
+
+/* Kanvas untuk balon dan kembang api */
+#balloons, #fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#balloons {
+  z-index: 0;
+}
+
+#fireworks {
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cake {
+  width: 180px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1e3c;
+  transform: scale(1.05);
+}
+
+/* FOTO BERGULIR */
+#photoContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0.9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(120vh) rotate(0deg);
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-250px) rotate(20deg);
+    opacity: 0;
+  }
+}
